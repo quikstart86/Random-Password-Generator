@@ -41,7 +41,7 @@
 // -----SPECIAL / NUMERIC / LOWERCASE / UPPERCASE CHARACTER ARRAYS-----
 
 // Array of special characters to be included in password
-const specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.', ``];
+const specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
 // Array of numeric characters to be included in password
 const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 // Array of lowercase characters to be included in password
@@ -52,39 +52,53 @@ const upperCasedCharacters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 
-const confirmLength = "";
-const confirmSpecialCharacters = [];
-const confirmNumericCharacters = [];
-const confirmLowerCasedCharacters = [];
-const confirmUpperCasedCharacters = [];
+let confirmLength = "";
+let confirmSpecialCharacters = [];
+let confirmNumericCharacters = [];
+let confirmLowerCasedCharacters = [];
+let confirmUpperCasedCharacters = [];
 
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-    const confirmLength = (prompt(`Please enter a valid number between 8 and 128 for the password`));
+    let confirmLength = (prompt(`Please enter a valid number between 8 and 128 for the password`));
 
     while (confirmLength <= 8 || confirmLength >= 128) {
         alert(`Password length must be between 8-128 characters - Try Again`);
-        const confirmLength = (prompt(`How many characters would you like to use in your password?`));
+        let confirmLength = (prompt(`How many characters would you like to use in your password?`));
     }
-// will alert to user how many characters have been selected for the password
+// will alert the user how many characters have been selected for the password
     alert(`Your password will have ${confirmLength} characters`);
 
-    const confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
-    const confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
-    const confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
-    const confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
+    confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
+    confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
+    confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
+    confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
 
     while (confirmSpecialCharacters === false && confirmNumericCharacters === false && confirmLowerCasedCharacters === false && confirmUpperCasedCharacters === false) {
-        alert(`You must select at lease one character to set to use for your password`);
+        alert(`You must select at lease one of theses options to use for your password`);
 
-        const confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
-        const confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
-        const confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
-        const confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
+        confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
+        confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
+        confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
+        confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
     }
 
+    let passwordCharacters = []
 
+    if (confirmSpecialCharacters) {
+        passwordCharacters = passwordCharacters.concat(specialCharacters)
+    }
+    if (confirmNumericCharacters) {
+        passwordCharacters = passwordCharacters.concat(numericCharacters)
+    }
+    if (confirmLowerCasedCharacters) {
+        passwordCharacters = passwordCharacters.concat(lowerCasedCharacters)
+    }
+    if (confirmUpperCasedCharacters) {
+        passwordCharacters = passwordCharacters.concat(upperCasedCharacters)
+    }
+    alert(passwordCharacters);
 
 }
 
