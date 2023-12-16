@@ -51,18 +51,29 @@ const lowerCasedCharacters = [
 const upperCasedCharacters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-    
-    const confirmLength = "";
-    const confirmSpecialCharacters;
-    const confirmNumericCharacters;
-const confirmLowerCasedCharacters;
-const confirmUpperCasedCharacters;
+
+const confirmLength = "";
+const confirmSpecialCharacters = [];
+const confirmNumericCharacters = [];
+const confirmLowerCasedCharacters = [];
+const confirmUpperCasedCharacters = [];
 
 
 // Function to prompt user for password options
 function getPasswordOptions() {
     const confirmLength = (prompt(`Please enter a valid number between 8 and 128 for the password`));
-alert(`Please enter a valid number between 8 and 128 for the password.`)
+
+    while (confirmLength <= 8 || confirmLength >= 128) {
+        alert(`Password length must be between 8-128 characters - Try Again`);
+    }
+
+    alert(`Your password will have ${confirmLength} characters`);
+
+    const confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
+    const confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
+    const confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
+    const confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
+
 }
 
 // Function for getting a random element from an array
