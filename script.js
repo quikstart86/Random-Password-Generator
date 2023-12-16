@@ -1,7 +1,7 @@
 // -------------------> SUDO CODE FOR CHALLENGE <------------------------
 
 
-// * You can store the generatedPassword as a string and concat each character 
+// * You can store the generated Password as a string and concat each character 
 // * OR as an array and push each character, then join once you have enough characters
 
 // * Function to prompt user for password options function getPasswordOptions() {
@@ -67,7 +67,7 @@ function getPasswordOptions() {
         alert(`Password length must be between 8-128 characters - Try Again`);
         let confirmLength = (prompt(`How many characters would you like to use in your password?`));
     }
-// will alert the user how many characters have been selected for the password
+    // will alert the user how many characters have been selected for the password
     alert(`Your password will have ${confirmLength} characters`);
 
     confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
@@ -84,7 +84,7 @@ function getPasswordOptions() {
         confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
     }
 
-    let passwordCharacters = []
+    let passwordCharacters = [];
 
     if (confirmSpecialCharacters) {
         passwordCharacters = passwordCharacters.concat(specialCharacters)
@@ -98,13 +98,13 @@ function getPasswordOptions() {
     if (confirmUpperCasedCharacters) {
         passwordCharacters = passwordCharacters.concat(upperCasedCharacters)
     }
-    alert(passwordCharacters);
+    console.log(passwordCharacters);
 
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+    
 }
 
 // Function to generate password with user input
