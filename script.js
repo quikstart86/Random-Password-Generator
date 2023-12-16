@@ -65,14 +65,26 @@ function getPasswordOptions() {
 
     while (confirmLength <= 8 || confirmLength >= 128) {
         alert(`Password length must be between 8-128 characters - Try Again`);
+        const confirmLength = (prompt(`How many characters would you like to use in your password?`));
     }
-
+// will alert to user how many characters have been selected for the password
     alert(`Your password will have ${confirmLength} characters`);
 
     const confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
     const confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
     const confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
     const confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
+
+    while (confirmSpecialCharacters === false && confirmNumericCharacters === false && confirmLowerCasedCharacters === false && confirmUpperCasedCharacters === false) {
+        alert(`You must select at lease one character to set to use for your password`);
+
+        const confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
+        const confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
+        const confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
+        const confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
+    }
+
+
 
 }
 
