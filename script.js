@@ -39,20 +39,17 @@
 
 
 // -----SPECIAL / NUMERIC / LOWERCASE / UPPERCASE CHARACTER ARRAYS-----
-
-// Array of special characters to be included in password
 const specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
-// Array of numeric characters to be included in password
 const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-// Array of lowercase characters to be included in password
 const lowerCasedCharacters = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-// Array of uppercase characters to be included in password
 const upperCasedCharacters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 
-let confirmLength = "";
+
+let finalPassword = '';
+let passwordLength = 0;
 let confirmSpecialCharacters = [];
 let confirmNumericCharacters = [];
 let confirmLowerCasedCharacters = [];
@@ -60,15 +57,15 @@ let confirmUpperCasedCharacters = [];
 
 
 // Function to prompt user for password options
-function getPasswordOptions() {
-    let confirmLength = (prompt(`Please enter a valid number between 8 and 128 for the password`));
+function generatePassword() {
+    let passwordLength = (prompt(`Please enter a valid number between 8 and 128 for the password`));
 
-    while (confirmLength <= 8 || confirmLength >= 128) {
+    while (passwordLength <= 8 || passwordLength >= 128) {
         alert(`Password length must be between 8-128 characters - Try Again`);
-        let confirmLength = (prompt(`How many characters would you like to use in your password?`));
+        passwordLength = (prompt(`How many characters would you like to use in your password?`));
     }
     // will alert the user how many characters have been selected for the password
-    alert(`Your password will have ${confirmLength} characters`);
+    alert(`Your password will have ${passwordLength} characters`);
 
     confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
     confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
@@ -100,17 +97,25 @@ function getPasswordOptions() {
     }
     console.log(passwordCharacters);
 
+    var getRandomPassword = ""
+
+    for (let i = 0; i < passwordLength; i++) {
+      getRandomPassword = getRandomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+      console.log(getRandomPassword);
+    }
+
+return getRandomPassword;
 }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
+// // Function for getting a random element from an array
+// function getRandom(arr) {
     
-}
+// }
 
-// Function to generate password with user input
-function generatePassword() {
+// // Function to generate password with user input
+// function generatePassword() {
 
-}
+// }
 
 // Get references to the #generate element
 const generateBtn = document.querySelector('#generate');
