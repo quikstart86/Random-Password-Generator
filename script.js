@@ -18,7 +18,7 @@
 // * Generate a random character for each selected character set
 // * Either push selected character sets to a mega-array of all selected characters
 // * OR you can keep the arrays separate and generate a random number to select the array and another to select the index
-// * 
+
 // * Once character sets are selected, move on to generating random characters
 
 // * Function for getting a random element from an array function getRandom(arr) {
@@ -39,20 +39,17 @@
 
 
 // -----SPECIAL / NUMERIC / LOWERCASE / UPPERCASE CHARACTER ARRAYS-----
-
-// Array of special characters to be included in password
 const specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
-// Array of numeric characters to be included in password
 const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-// Array of lowercase characters to be included in password
 const lowerCasedCharacters = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-// Array of uppercase characters to be included in password
 const upperCasedCharacters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 
-let confirmLength = "";
+
+let finalPassword = '';
+let passwordLength = 0;
 let confirmSpecialCharacters = [];
 let confirmNumericCharacters = [];
 let confirmLowerCasedCharacters = [];
@@ -60,21 +57,24 @@ let confirmUpperCasedCharacters = [];
 
 
 // Function to prompt user for password options
-function getPasswordOptions() {
-    let confirmLength = (prompt(`Please enter a valid number between 8 and 128 for the password`));
+function generatePassword() {
+    let passwordLength = (prompt(`Please enter a valid number between 8 and 128 for the password`));
 
-    while (confirmLength <= 8 || confirmLength >= 128) {
+    // Creating While loop to perform confirm length
+    while (passwordLength <= 8 || passwordLength >= 128) {
         alert(`Password length must be between 8-128 characters - Try Again`);
-        let confirmLength = (prompt(`How many characters would you like to use in your password?`));
+        passwordLength = (prompt(`How many characters would you like to use in your password?`));
     }
     // will alert the user how many characters have been selected for the password
-    alert(`Your password will have ${confirmLength} characters`);
+    alert(`Your password will have ${passwordLength} characters`);
 
+    // Character confirm prompts with string
     confirmSpecialCharacters = confirm(`Click OK to confirm the use of special characters in you password`);
     confirmNumericCharacters = confirm(`Click OK to confirm the use of numbers in you password`);
     confirmLowerCasedCharacters = confirm(`Click OK to confirm the use of lowercase characters in you password`);
     confirmUpperCasedCharacters = confirm(`Click OK to confirm the use of uppercase characters in you password`);
 
+    // If false to all of the above return 'you must select one of these'
     while (confirmSpecialCharacters === false && confirmNumericCharacters === false && confirmLowerCasedCharacters === false && confirmUpperCasedCharacters === false) {
         alert(`You must select at lease one of theses options to use for your password`);
 
@@ -86,6 +86,7 @@ function getPasswordOptions() {
 
     let passwordCharacters = [];
 
+    // to concat each character set if selected for use in the password
     if (confirmSpecialCharacters) {
         passwordCharacters = passwordCharacters.concat(specialCharacters)
     }
@@ -98,19 +99,21 @@ function getPasswordOptions() {
     if (confirmUpperCasedCharacters) {
         passwordCharacters = passwordCharacters.concat(upperCasedCharacters)
     }
+    // Shows password being generated in the console
     console.log(passwordCharacters);
 
+    var getRandomPassword = ""
+
+    // for loop using .length and .floor / .random to iterate through and generate the password
+    for (let i = 0; i < passwordLength; i++) {
+        getRandomPassword = getRandomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+        console.log(getRandomPassword);
+    }
+
+    // returns get password
+    return getRandomPassword;
 }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-    
-}
-
-// Function to generate password with user input
-function generatePassword() {
-
-}
 
 // Get references to the #generate element
 const generateBtn = document.querySelector('#generate');
