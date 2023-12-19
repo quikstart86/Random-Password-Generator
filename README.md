@@ -1,79 +1,108 @@
 # Random-Password-Generator
 
-## Overview
+## [Description](#description)
 
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+This challenge required us to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+## [Table of Contents](#table-of-contents)
 
-## Instructions
+* [Description](#descrition)
+* [Acceptance Criteria](#acceptance-criteria)
+* [Mock-Up](#mock-up)
+* [Installation](#installation)
+* [Credits](#credits)
+* [License](#license)
+* [Badges](#badges)
 
-The following image shows the web application's appearance and functionality:
+## [Acceptance Criteria](#acceptance-criteria)
 
-![password generator demo](./assets/05-javascript-challenge-demo.png)
-
+Here are the critical requirements necessary to develop a Random Password Generator that satisfies a typical hiring manager’s needs:
 
 * Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 8 characters but no more than 128.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+* Present a series of prompts for password criteria
+* Length of password* At least 8 characters but no more than 128.
+* Character types: Lowercase, Uppercase, Numeric, Special characters ($@%&*, etc)
+* Code should validate for each input and at least one character type should be selected
+* Once prompts are answered then the password should be generated and displayed in an alert or written to the page
 
-## Grading Requirements
+## [Mock-Up](#mock-up)
 
-This challenge is graded based on the following criteria: 
+![portfolio demo](./assets/Random%20password%20generator.gif)
 
-### Technical Acceptance Criteria: 40%
+[Live View](./assets/Random%20password%20generator.gif)
+<br>
+[Static View](./assets/password%20screenshot.PNG)
+<br>
+[Deployed Application](https://quikstart86.github.io/Random-Password-Generator/)
+<br>
+[GitHub project repo](https://github.com/quikstart86/Random-Password-Generator)
 
-* Satisfies all of the above acceptance criteria plus the following:
+## [Installation](#installation)
 
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
+I started by creating a new repo on GitHub giving it a unique name and then cloning it to my local environment using GitBash. I then created a few folders to house the CSS and assets. I created an index.html / script.js / style.css file in gitbash using 'touch' and then began to work through the files. Coding in the JavaScript first, to create the code structure, and then once sufficiently built out, I proceeded to work on the HTML and CSS. With any new major features/changes to the the code I added (git add -A) the changes, committed the changes (git commit -m " ") and then pushed them up to my remote repo on GitHub (git push origin).
 
-### Deployment: 32%
+## [Credits](#credits)
 
-* Application deployed at live URL.
+Starter Code provided by EdX
+<br>
+Code modified and developed by Thomas Jack
 
-* Application loads with no errors.
+**Support and mentoring from course mentors:**
+<br>
+Robby Kurle (https://github.com/rfnkurle)
 
-* Application GitHub URL submitted.
+**Peer Study Group Support:**
+<br>
+Georgie Lillington
 
-* GitHub repository that contains application code.
+**Supporting links:** <br>
+[Wesbos.com](https://courses.wesbos.com/account/access/5de174daa0fbbc5276b71ef7/view/375483126)
+<br>
+[Udemy.com](https://www.udemy.com/course/the-complete-javascript-course/)
+<br>
+[W3Schools](https://www.w3schools.com/js/default.asp)
+<br>
+[YouTube](https://www.youtube.com/watch?v=XH7CzSZ-9gY&ab_channel=TylerPotts)
+<br>
+[YouTube](https://www.youtube.com/watch?v=Xrsb9SiF3a8&t=1186s&ab_channel=GreatStack)
 
-### Application Quality: 15%
+## [License](#license)
 
-* Application user experience is intuitive and easy to navigate.
+MIT Licence
 
-* Application user interface style is clean and polished.
+Copyright (c) <2023> <Thomas Jack>
 
-* Application resembles the mock-up functionality provided in the challenge instructions.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-### Repository Quality: 13%
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-* Repository has a unique name.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-* Repository follows best practices for file structure and naming conventions.
+## [Badges](#badges)
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+![Static Badge](https://img.shields.io/badge/JavaScript_80%25-orange)
+![Static Badge](https://img.shields.io/badge/HTML_10%25-blue)
+![Static Badge](https://img.shields.io/badge/CSS_10%25-Green)
 
-* Repository contains multiple descriptive commit messages.
+## [Features](#features)
 
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+N/A
 
+## [Contributing](#contributing)
 
-## Review
+N/A
 
-You are required to submit the following for review:
+## [Tests](#tests)
 
-* The URL of the deployed application.
+N/A
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+<br>
 
----
+[Back to top](#top)
 
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
